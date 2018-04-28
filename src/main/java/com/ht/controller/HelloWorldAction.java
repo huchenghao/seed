@@ -11,6 +11,7 @@ public class HelloWorldAction {
 	@RequestMapping("/h")
 	public String hello(){
 		System.out.println("into h");
+		
 		return "SUC";
 	}
 }

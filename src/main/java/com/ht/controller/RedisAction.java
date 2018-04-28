@@ -5,7 +5,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ht.dao.impl.RedisRepository;
+import com.ht.dao.conf.RedisRepository;
 
 
 @RestController

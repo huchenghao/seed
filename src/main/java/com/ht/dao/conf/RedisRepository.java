@@ -1,4 +1,4 @@
-package com.ht.dao.impl;
+package com.ht.dao.conf;
 
 import java.util.Collection;
 import java.util.Date;

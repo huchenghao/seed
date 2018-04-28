@@ -26,8 +26,12 @@ public class GlobalExceptionHandler {
 	@ResponseBody
 	public MessageInfo jsonErrorHandler(HttpServletRequest req, Exception e) throws Exception {
 		StringWriter sw = new StringWriter();   
-        e.printStackTrace(new PrintWriter(sw, true));   
-        logger.error(sw.toString());
+		if(e instanceof IllegalArgumentException){//参数校验异常
+			logger.warn("{method:"+req.getRequestURI()+"}-->["+e.getMessage()+"]");
+		}else{
+			e.printStackTrace(new PrintWriter(sw, true));   
+	        logger.error(sw.toString());
+		}
 	    return ResultGenerator.genFailResult(e.getMessage());
 	}
 
